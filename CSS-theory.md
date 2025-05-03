@@ -5,22 +5,37 @@ Application: There are 3 types in which we apply CSS styles:
 1. inline: i.e., HTML tags with CSS attributes
     * <tag style="attribute1:value1; attribute2=value2; attribute3=value3; ...">
 2. internal: HTML tags and CSS styles won't be in same line, rather in the same project
-    * <style>
-        selector{
-            attribute1: value1;
-            attribute2: value2;
-            ...
-        }
+    * Syntax:
+    <head>
+        <style>
+            selector{
+                attribute1: value1;
+                attribute2: value2;
+                ...
+            }
+        </style>
+    </head>
     * It helps to define common attribute for whole program. However, 'inline' setting takes up more memory (whose?)
+    * <style> tag is written inside <head> tag.
 3. external: CSS styles are defined in separate file with .css extension.
     * <link> tag is used to link HTML and CSS files.
     * these styles/settings are for global use
+    * Syntax: 
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
 
 Notes: 
 - it has only attributes (and no tags) which are to support HTML
 - 'style' defines CSS setting
 - if <style> and <link> are to be defined inside the <head> tag, else they won't work.
 - <head> tag doesn't allow content in the same line. However, CSS helps in doing that(Not sure?)
+- Sequence of priority: inline > internal > external
+- Sequence of priority: if a style is applied to same element more than once, then the one coming later in definition in the stylesheet, is give priority.
+- Size in CSS (2 types):
+    1. Absolute - in pixel (cm, inch, etc. can also be used)
+        96 inch = 1 inch = 2.54 cm  
+    2. Relative - 
 
 ## CSS Selector (3)
 1. Tag-selector
@@ -67,7 +82,8 @@ Notes:
     ...
 
 3. id-selector
-    - Used to apply unique styles for a specific tag in specific place in the program
+    - Used to apply unique styles for a specific element in specific place in the program
+    - in order to apply style to multiple elements we don't give them same id, rather give them same class
     - Syntax: 
         #id-name
         {
@@ -215,9 +231,14 @@ id-selector > attribute-selector > class-selector > child-selector > direct-chil
         2. rgb (range 0-255 for each) - e.g., rgb(100,255,150)
         Note: if rgb value for any component is given >255, like 355 => 355%255 = 100 (modulus operation)
         3. hexadecimal colors (range 0-F for all 6 bits of 8 bits each) - #18bb6e
-    * color:rgb (and similar) are for global attributes
-    * background-color:red (and similar) are for inline
-        E.g.: <h1 style="color:red; background-color=yellow;">...text...</h1>
+    * Property: 
+        color:rgb(x,y,z)
+        - this is are for global attributes
+        - this property is for foreground color (what appears first)
+        background-color:rgb(x,y,z)
+        - this is for inline
+        - this property is for background color (what appears at the back, for text it appears as text highlighter)
+    * E.g.: <h1 style="color:red; background-color=yellow;">...text...</h1>
 2. border: 
     * defined in pixel (px)
         E.g.: 
@@ -267,9 +288,35 @@ id-selector > attribute-selector > class-selector > child-selector > direct-chil
     2. And in case none of the provided is available, then default font of the browser precedes.
     3. And if all/multiple supported then leftmost will be selected.
     4. this helps to fix different browser problem
-4. text-declaration: to define underlining of hyperlink
+    5. Reference: H:\vs-code\css-practice\resources\font-family.JPG
+4. text-decoration: to define underlining of hyperlink
     E.g.: 
-    text-declaration:none; // to remove underlying of hyperlink
+    - text-decoration:none; // to remove underlying of hyperlink
+    - text-decoration:underline/overline/line-through; <!-- just position for the line -->
+    - text-decoration:underline dotted red; <!-- position type color -->
+    - text-decoration:green wavy underline; <!-- color type position -->
+    - text-decoration:underline overline red; <!-- position position color -->
+    - Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration#:~:text=CSS%20Demo%3A%20text%2Ddecoration
+    Note: 
+    1. text-decoration-style: <type>;
+        - 'type' - solid, double, dotted, dashed, wavy
+        - this attribute helps to define decoration-style instead of giving in the same line as above examples
+5. font-weight: 
+    - values: normal/bold/bolder/lighter, or 
+    - values: 100-900
+6. line-height: to set distance between line in a paragraph
+    - Ways to define: 
+        1. px
+        2. type: normal (by default)
+    - E.g.: 
+        - line-height: normal;
+        - line-height: 20px;
+7. text-transform: to set case of the text, i.e., uppercase/lowercase/capitalize/none
+    - uppercase: to set all content as capital letters (vice-versa for lowercase)
+    - capitalize: to set first letter of each word as capital
+    - none: used only if properties are set before and now we want to nullify it
+ 8. 
+
 #### 'List' attributes
 1. list-style-type:
     * used to specify the list bullet (same for <ol> and <ul>)
