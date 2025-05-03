@@ -11,3 +11,8 @@ Other tools for use:
     For english: left=start, right=end
     For urdu: left=end, right=start
 4. Reference for documentation: mdn on google
+
+References to theory in the project:
+1. CSS-basic attributes (text, box design, selector, display, animation)
+ - css-practice\CSS-theory.md 
+2. 

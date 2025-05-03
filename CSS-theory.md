@@ -224,52 +224,6 @@ id-selector > attribute-selector > class-selector > child-selector > direct-chil
 
 
 ## CSS Attributes
-#### Box attributes
-1. colors:
-    * defined in 3 ways:
-        1. color name (e.g., red, green, blue, cyan, etc.)
-        2. rgb (range 0-255 for each) - e.g., rgb(100,255,150)
-        Note: if rgb value for any component is given >255, like 355 => 355%255 = 100 (modulus operation)
-        3. hexadecimal colors (range 0-F for all 6 bits of 8 bits each) - #18bb6e
-    * Property: 
-        color:rgb(x,y,z)
-        - this is are for global attributes
-        - this property is for foreground color (what appears first)
-        background-color:rgb(x,y,z)
-        - this is for inline
-        - this property is for background color (what appears at the back, for text it appears as text highlighter)
-    * E.g.: <h1 style="color:red; background-color=yellow;">...text...</h1>
-2. border: 
-    * defined in pixel (px)
-        E.g.: 
-        <p style="border:5px solid rgb(12,192,21);">
-        <img src="images/squirrel.jpeg" width="400px" height="350px" style="border:10px solid red;">
-    * types of border: 
-        1. solid
-        2. dotted
-        3. outset/inset (3D shade)
-        4. dashed
-        5. ridge (3d type)
-3. box-shadow: 
-    * to display shadow for HTML element
-    * Syntax: 
-        box-shadow: Xpx Ypx color;
-            where XY are: ++ -+ -- +- (1, 2, 3, 4 quadrants)
-        box-shadow: px1 px2 px3 px4 color;
-            quad in clockwise dimension of shadow
-    * E.g.,
-        <p style="background-color:#cfbeab; box-shadow:3px 3px;"></p>
-        <p style="background-color:#cfbeab; box-shadow:3px 3px; #ff0000"></p>
-4. border-radius: 
-    * to give curvature to box
-    * Syntax: 
-        border-radius: Npx;
-            i.e., all corners similar curve
-        border-radius: Mpx Npx;
-            i.e., two diagonal corner pair
-    * E.g.,
-    <img src="images/Jeep.jpeg" width="400px" height="300px" style="border-radius:150px 50px">
-    * We can make circles using this attribute, when N=width/2
 #### Text attributes
 1. text-shadow
     * to display shadow on text
@@ -315,7 +269,6 @@ id-selector > attribute-selector > class-selector > child-selector > direct-chil
     - uppercase: to set all content as capital letters (vice-versa for lowercase)
     - capitalize: to set first letter of each word as capital
     - none: used only if properties are set before and now we want to nullify it
- 8. 
 
 #### 'List' attributes
 1. list-style-type:
@@ -342,7 +295,21 @@ id-selector > attribute-selector > class-selector > child-selector > direct-chil
     * bullet icons need to be small, else the margin gets hampered. 
 
 #### Other Attributes
-1. display:
+1. colors:
+    * defined in 3 ways:
+        1. color name (e.g., red, green, blue, cyan, etc.)
+        2. rgb (range 0-255 for each) - e.g., rgb(100,255,150)
+        Note: if rgb value for any component is given >255, like 355 => 355%255 = 100 (modulus operation)
+        3. hexadecimal colors (range 0-F for all 6 bits of 8 bits each) - #18bb6e
+    * Property: 
+        color:rgb(x,y,z)
+        - this is are for global attributes
+        - this property is for foreground color (what appears first)
+        background-color:rgb(x,y,z)
+        - this is for inline
+        - this property is for background color (what appears at the back, for text it appears as text highlighter)
+    * E.g.: <h1 style="color:red; background-color=yellow;">...text...</h1>
+2. display:
     * used to change the position of HTML element.
     * Syntax: 
         display:inline; // to define tags inline
@@ -431,7 +398,7 @@ id-selector > attribute-selector > class-selector > child-selector > direct-chil
             grid-gap: 20px 30px; //row-gap col-gap
         }
 
-2. float: used to change the position of division columns (i.e., <div> tag elements)
+3. float: used to change the position of division columns (i.e., <div> tag elements)
     * Syntax: 
         <div style="background-color:#ff11ee; float:left/right;">
         ...
@@ -440,27 +407,27 @@ id-selector > attribute-selector > class-selector > child-selector > direct-chil
         float:left    => column1 column2
         float:right   => column2 column1
     * Note: This attribute does not just shift the columns but also flips them.
-3. Animation 
-A. Two-point animation
-    - Syntax:
-        @keyframes ani-name{
-            from{property1:old-value1;property2:old-value2;...}
-            to{property1:new-value1;property2:new-value2;...}
-        }
-B. Multi-point animation
-    - Syntax:
-        @keyframes ani-name{
-            w% {property1:old-value1;property2:old-value2;...}
-            x% {property1:new-value1;property2:new-value2;...}
-            ...
-            z% {property1:new-value1;property2:new-value2;...}
-        }
-    - total % should be 100
-- Applying animation to a selector:
-    - Syntax: 
-        selector{
-            animation-name:ani-name;
-            animation-duration:timer (with units like s/ms/min);
-            animation-iteration:5/infinite;
-            animation-directio:normal/reverse/alternate
+4. Animation 
+    A. Two-point animation
+        - Syntax:
+            @keyframes ani-name{
+                from{property1:old-value1;property2:old-value2;...}
+                to{property1:new-value1;property2:new-value2;...}
             }
+    B. Multi-point animation
+        - Syntax:
+            @keyframes ani-name{
+                w% {property1:old-value1;property2:old-value2;...}
+                x% {property1:new-value1;property2:new-value2;...}
+                ...
+                z% {property1:new-value1;property2:new-value2;...}
+            }
+        - total % should be 100
+    - Applying animation to a selector:
+        - Syntax: 
+            selector{
+                animation-name:ani-name;
+                animation-duration:timer (with units like s/ms/min);
+                animation-iteration:5/infinite;
+                animation-directio:normal/reverse/alternate
+                }
