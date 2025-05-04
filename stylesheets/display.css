@@ -1,0 +1,18 @@
+#id1{
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    padding: 30px;
+    display: inline;
+    /* Note: 
+    1. Margin and padding are not applied to inline elements. 
+    2. height and width are also not applicable for inline elements*/
+}
+
+#id2{
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    padding: 30px;
+    display: inline-block;
+}

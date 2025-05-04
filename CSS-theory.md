@@ -300,6 +300,11 @@ id-selector > attribute-selector > class-selector > child-selector > direct-chil
         1. color name (e.g., red, green, blue, cyan, etc.)
         2. rgb (range 0-255 for each) - e.g., rgb(100,255,150)
         Note: if rgb value for any component is given >255, like 355 => 355%255 = 100 (modulus operation)
+        - RGBA - with alpha channel (opacity): 
+            * Value for A belongs to [0 to 1]
+            * E.g.: 
+            color: rgba(255,0,0,0.5)
+            color: rgba(255,0,0,1)
         3. hexadecimal colors (range 0-F for all 6 bits of 8 bits each) - #18bb6e
     * Property: 
         color:rgb(x,y,z)
@@ -309,96 +314,8 @@ id-selector > attribute-selector > class-selector > child-selector > direct-chil
         - this is for inline
         - this property is for background color (what appears at the back, for text it appears as text highlighter)
     * E.g.: <h1 style="color:red; background-color=yellow;">...text...</h1>
-2. display:
-    * used to change the position of HTML element.
-    * Syntax: 
-        display:inline; // to define tags inline
-        display:block; // to make inline tags to go in block (separate lines) or like to display block kind of figure around anything/text
-        display:inline-block; // to display inline and block level components side-by-side with uniform margin
-        display:none; // to hide element on webpage till user wants it to come to sight
-        display:grid; //to display elements grid-wise
-        display:flex; // to display elements in column/row (or matrix) -wise (also called containers)
-    * ![alt text](resources/display-attribute.PNG)
-    Note: 
-    a. heading tags (h1, h2, etc.) are not inline by default. Hence, when we define "display" attribute as inline to make them inline.
-    b. anchor tag is inline by default
-    c. in case of defining display attribute for same tag multiple times, then only first one is considered with its value.
-    * E.g.: 
-    1. display:inline;
-        <h1 style="background-color:red;display:inline;">CSS</h1>
-        <h1 style="background-color:red;display:inline;">HTML</h1>
 
-        Output: 
-        CSS     HTML
-    2. display:flex;
-        <style>
-            .one {background-color:#ffee00;}
-            .two {background-color:#ffee00;}
-            .three {background-color:#ffee00;}
-            .four {background-color:#ffee00;}
-            #main-class{display:flex;}
-        </style>
-        <body>
-            <div class:"main-class">
-                <div class="one">
-                    <h1>Jan</h1>
-                </div>
-                <div class="two">
-                    <h1>Feb</h1>
-                </div>
-                <div class="three">
-                    <h1>Mar</h1>
-                </div>
-                <div class="four">
-                    <h1>Apr</h1>
-                </div>
-            </div>
-        </body>
-        Note: 
-        1. The width of the content increases as per the no. of letter.
-        2. 'Flex' type of 'display' attribute, is defined for outer tag but applied to inner tags.
-        3. if no. of contents are added further, then the columns will keep on increasing in same line with width addusting by itself.
-        4. Other attributes related to "display:flex" attribute: 
-            - flex-direction: row (default)/column/row-reverse/column-reverse
-            - flex-wrap: wrap/nowrap
-            - gap:10px (to apply gap of 10pm between each containers)
-        5. 'display:flex' attribute is good for column-matrix or row-matrix view of data
-    3. display:inline-block;
-    <style>
-        .menus
-        {
-            background-color:#ee11ff;
-            width:150px;
-            display:inline-block;
-            text-align:center;
-            text-declaration:none; // to remove underlying of hyperlink
-        }
-    </style>
-
-    <a href=".." class="menus">Course</a>
-    <a href=".." class="menus">Services</a>
-    <a href=".." class="menus">Batches</a>
-    <a href=".." class="menus">Contact</a>
-
-    Output:
-    -----------------------------------------
-    | Course | Services | Batches | Contact |
-    -----------------------------------------
-    4. display:grid;
-    Syntax: grid-template-columns:col1-px col2-px col3-px ... coln-px;
-    <style>
-        .main-div
-        {
-            display:grid;
-            grid-template-columns:auto auto auto ... auto;
-            // grid-template-columns: 300px 500px ... 400px;
-            // grid-template-columns: 30% 40% 30%;
-            column-gap: 20px;
-            row-gap: 20px;
-            grid-gap: 20px 30px; //row-gap col-gap
-        }
-
-3. float: used to change the position of division columns (i.e., <div> tag elements)
+2. float: used to change the position of division columns (i.e., <div> tag elements)
     * Syntax: 
         <div style="background-color:#ff11ee; float:left/right;">
         ...
@@ -407,7 +324,7 @@ id-selector > attribute-selector > class-selector > child-selector > direct-chil
         float:left    => column1 column2
         float:right   => column2 column1
     * Note: This attribute does not just shift the columns but also flips them.
-4. Animation 
+3. Animation 
     A. Two-point animation
         - Syntax:
             @keyframes ani-name{
