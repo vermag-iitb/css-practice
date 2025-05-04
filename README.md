@@ -14,5 +14,6 @@ Other tools for use:
 
 References to theory in the project:
 1. CSS-basic attributes (text, box design, selector, display, animation)
- - css-practice\CSS-theory.md 
-2. 
+- ![Alt text](../css-practice/CSS-theory.md)
+2. Border-basic theory and attributes
+- ![Alt text](../css-practice/box-model.md)
