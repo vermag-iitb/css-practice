@@ -34,9 +34,45 @@ Notes:
 - Sequence of priority: if a style is applied to same element more than once, then the one coming later in definition in the stylesheet, is give priority.
 - Size in CSS (2 types):
     1. Absolute - in pixel (cm, inch, etc. can also be used)
-        96 inch = 1 inch = 2.54 cm  
+        - 96 pixel = 1 inch = 2.54 cm  
     2. Relative - 
-
+        - %: to define size of an element based on its parent object
+        - em: 
+            * For font/text properties: 1em -> equal to parent text/font properties
+            * For other properties like width: 1em -> equal to font-size of self (bcz font-size converted to px)
+        - rem:
+            * also called: root em
+            * it sets font-size relative to first parent (outermost element)
+            * to check the font-size of outermost element, type 'hello' under <body> tag and get its size on browser
+        - viewport height: 
+            * also called browser window height
+            * presented by '1vh' = 1% of viewport height
+        - viewport width:
+            * also called browser window width
+            * presented by '1vw' = 1% of viewport width
+    3. Position
+        * it is used to set position of an element in a document
+        * Syntax: position: static/relative/absolute/fixed
+        * Properties: top/right/bottom/left/z-index. These help to set distance of the element w.r.t webpage borders
+        * position:static: 
+            - it represents no change to what appears without position attribute
+            - no effect of properties (top/right/bottom/left/z-index)
+        * position:relative: 
+            - it represents position of element from parent position
+        * position:absolute: 
+            - it represents position of element as per the closest ancestor with non-static position
+        * position:fixed: 
+            - it represents position of element as per the browser screen
+        * position:sticky:
+            - it represents position of element relative to the scrolling window.
+            - it sticks the element to screen at a fixed location and scrolls with the content
+        * position:z-index: 
+            - it represents stack level of the element (i.e., layering)
+            - an element with larger z-index will overlap element with lesser z-index
+            - Syntax: 
+                - z-index: auto(0)
+                - z-index: 1/2/3...
+                - z-index: -1/-2/-3...
 ## CSS Selector (3)
 1. Tag-selector
     - Used to apply unique styles for one tag throughout the program

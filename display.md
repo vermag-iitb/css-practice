@@ -19,7 +19,7 @@
 * display:none;
     - to remove element from document flow
     - used to hide element on the webpage
-    - there is another attribute to make an element hidden. However, in case of 'visibility' attribute a space is still aloocated while in case of 'display: none' attribute, there is no space allocated for the element: 
+    - there is another attribute to make an element hidden. However, in case of 'visibility' attribute a space is still allocated while in case of 'display: none' attribute, there is no space allocated for the element: 
         visibility:hidden
 * display:grid;
     - to display elements grid-wise
